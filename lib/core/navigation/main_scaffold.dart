@@ -1,5 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import '../localization/app_localization.dart';
 import '/features/home/presentation/pages/home_page.dart';
 import '/features/profile/presentation/pages/profile_page.dart';
 import '/features/settings/presentation/pages/settings_page.dart';
@@ -34,15 +34,15 @@ class _MainScaffoldState extends State<MainScaffold> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: AppLocalizations.of(context).translate('home'),
+            label: ('home').tr(),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: AppLocalizations.of(context).translate('profile'),
+            label: ('profile').tr(),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: AppLocalizations.of(context).translate('settings'),
+            label: ('settings').tr(),
           ),
         ],
         currentIndex: _selectedIndex,

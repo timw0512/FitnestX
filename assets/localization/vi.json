@@ -1,0 +1,26 @@
+{
+  "home": "Trang chủ",
+  "profile": "Trang cá nhân",
+  "settings": "Cài đặt",
+  "welcome": "Xin chào!",
+  "on_boarding" : {
+    "get_started": "Bắt đầu",
+    "slogan": "Bất kì ai cũng có thể tập luyện.",
+    "track_goal": {
+      "title" : "Theo dõi mục tiêu của bạn",
+      "description" : "Đừng lo lắng nếu bạn gặp khó khăn trong việc xác định mục tiêu của mình, chúng tôi có thể giúp bạn xác định mục tiêu của bạn và theo dõi mục tiêu của bạn"
+    },
+    "get_burn" : {
+      "title": "Tiếp tục cố gắng",
+      "description" : "Hãy tiếp tục cố gắng, để đạt được mục tiêu của mình, nỗi đau chỉ là nhất thời, nếu bỏ cuộc bây giờ bạn sẽ đau mãi mãi."
+    },
+    "eat_well" : {
+      "title": "Ăn uống đầy đủ",
+      "description": "Hãy bắt đầu một lối sống lành mạnh, quyết định chế độ ăn uống của bạn mỗi ngày. Ăn uống lành mạnh là niềm vui"
+    },
+    "improve_sleep" : {
+      "title": "Cải thiện chất lượng giấc ngủ",
+      "description": "Cải thiện chất lượng giấc ngủ của bạn với chúng tôi, giấc ngủ ngon có thể mang lại tâm trạng tốt vào buổi sáng"
+    }
+  }
+}

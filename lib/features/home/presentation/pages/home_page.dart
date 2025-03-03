@@ -1,8 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:fitness/core/services/shared_preferences_service.dart';
-import 'package:fitness/features/on_board/presentation/pages/on_boarding.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import '/core/localization/app_localization.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,7 +16,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context).translate('welcome')),
+        title: Text('welcome').tr(),
       ),
       body: Center(
         child: Column(

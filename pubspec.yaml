@@ -11,8 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_localizations:
-    sdk: flutter
+  easy_localization: ^3.0.7
+  iconly: ^1.0.1
+  font_awesome_flutter: ^10.8.0
   mockito: ^5.0.0
   google_fonts: ^6.2.1
   shared_preferences: ^2.5.2
@@ -22,14 +23,14 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  mockito: ^5.0.0
 
   flutter_lints: ^5.0.0
 flutter:
-
+  generate: true
   uses-material-design: true
 
   assets:
+    - assets/localization/
     - assets/google_fonts/
     - assets/images/
     - lib/core/localization/
