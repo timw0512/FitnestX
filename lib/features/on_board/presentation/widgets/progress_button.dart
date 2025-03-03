@@ -19,24 +19,30 @@ class ProgressButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomPaint(
       painter: ProgressPainter(progress: (currentPage + 1) / totalPages),
-      child: Container(
-        width: 50,
-        height: 50,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(99),
-          gradient: AppColors.blueLinear,
-        ),
+      child: SizedBox(
+        width: 60,
+        height: 60,
         child: Center(
-          child: IconButton(
-            icon: Icon(Icon),
-            onPressed: () {
-              if (currentPage < totalPages - 1) {
-                pageController.nextPage(
-                  duration: Duration(milliseconds: 300),
-                  curve: Curves.easeInOut,
-                );
-              }
-            },
+          child: Container(
+            width: 50,
+            height: 50,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(99),
+              gradient: AppColors.blueLinear,
+            ),
+            child: Center(
+              child: IconButton(
+                icon: Icon(IconlyLight.arrow_right_2),
+                onPressed: () {
+                  if (currentPage < totalPages - 1) {
+                    pageController.nextPage(
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.easeInOut,
+                    );
+                  }
+                },
+              ),
+            ),
           ),
         ),
       ),
@@ -59,7 +65,7 @@ class ProgressPainter extends CustomPainter {
         Paint()
           ..color = Color(0xFFF7F8F8)
           ..style = PaintingStyle.stroke
-          ..strokeWidth = 4;
+          ..strokeWidth = 0.5;
 
     canvas.drawCircle(center, radius, paint);
 
@@ -67,7 +73,7 @@ class ProgressPainter extends CustomPainter {
     final progressPaint =
         Paint()
           ..style = PaintingStyle.stroke
-          ..strokeWidth = 4
+          ..strokeWidth = 2
           ..shader = AppColors.blueLinear.createShader(
             Rect.fromCircle(center: center, radius: radius),
           );
