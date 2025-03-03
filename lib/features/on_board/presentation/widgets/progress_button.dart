@@ -34,12 +34,10 @@ class ProgressButton extends StatelessWidget {
               child: IconButton(
                 icon: Icon(IconlyLight.arrow_right_2),
                 onPressed: () {
-                  if (currentPage < totalPages - 1) {
-                    pageController.nextPage(
-                      duration: Duration(milliseconds: 300),
-                      curve: Curves.easeInOut,
-                    );
-                  }
+                  pageController.nextPage(
+                    duration: Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
                 },
               ),
             ),

@@ -47,6 +47,6 @@ class OnboardingController with ChangeNotifier {
   }
 
   Future<void> finishOnboarding() async {
-    await sharedPreferencesService.setIsFirstLaunch(false); // Use the service
+    await sharedPreferencesService.setIsFirstLaunch(false);
   }
 }
