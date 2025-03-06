@@ -6,13 +6,13 @@ import 'dart:math';
 class ProgressButton extends StatelessWidget {
   final int currentPage;
   final int totalPages;
-  final PageController pageController;
+  final VoidCallback onPressed;
 
   const ProgressButton({
     super.key,
     required this.currentPage,
     required this.totalPages,
-    required this.pageController,
+    required this.onPressed,
   });
 
   @override
@@ -33,12 +33,7 @@ class ProgressButton extends StatelessWidget {
             child: Center(
               child: IconButton(
                 icon: Icon(IconlyLight.arrow_right_2),
-                onPressed: () {
-                  pageController.nextPage(
-                    duration: Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                  );
-                },
+                onPressed: onPressed,
               ),
             ),
           ),

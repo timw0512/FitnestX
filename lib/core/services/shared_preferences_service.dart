@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesService {
@@ -9,7 +10,16 @@ class SharedPreferencesService {
   }
 
   Future<void> setIsFirstLaunch(bool value) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool(_isFirstLaunchKey, value);
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setBool(_isFirstLaunchKey, value);
+      if (kDebugMode) {
+        print('SharedPreferences: set isFirstLaunch to $value');
+      }
+    } catch (e) {
+      if (kDebugMode) {
+        print('SharedPreferences error: $e');
+      }
+    }
   }
 }

@@ -3,6 +3,7 @@ import 'package:fitness/core/services/shared_preferences_service.dart';
 import 'package:fitness/core/theme/colors.dart';
 import 'package:fitness/core/theme/text_styles.dart';
 import 'package:fitness/features/on_board/presentation/widgets/progress_button.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../controllers/onboarding_controller.dart';
 import 'package:provider/provider.dart';
@@ -29,6 +30,12 @@ class OnBoardingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Provider.of<OnboardingController>(context);
+    if (kDebugMode) {
+      print('OnboardingView controller hash: ${controller.hashCode}');
+    }
+    void onNextPage() {
+      controller.nextPage(context);
+    }
 
     return Scaffold(
       body:
@@ -84,7 +91,7 @@ class OnBoardingView extends StatelessWidget {
                 physics: NeverScrollableScrollPhysics(),
                 itemCount: controller.items.length,
                 itemBuilder: (context, index) {
-                  final item = controller.items[index];
+                  final item = controller.items[controller.currentIndex];
                   return Stack(
                     children: [
                       Column(
@@ -137,9 +144,9 @@ class OnBoardingView extends StatelessWidget {
                         bottom: 20,
                         right: 20,
                         child: ProgressButton(
-                          currentPage: index,
+                          currentPage: controller.currentIndex,
                           totalPages: controller.items.length,
-                          pageController: controller.pageController,
+                          onPressed: onNextPage,
                         ),
                       ),
                     ],

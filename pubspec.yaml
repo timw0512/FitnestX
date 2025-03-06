@@ -33,4 +33,3 @@ flutter:
     - assets/localization/
     - assets/google_fonts/
     - assets/images/
-    - lib/core/localization/
